@@ -1,0 +1,31 @@
+\section{The Fourier Transform of a Gaussian}
+
+Consider the signal
+
+\begin{equation}
+  \label{eq:gauss}
+  x(t) = \frac{1}{\sqrt{\pi \sigma^2}} e^{-t^2/\sigma^2}, \quad t \in [-T/2,T/2)
+\end{equation}
+
+where $\sigma = 16 \Delta t$, step length $\Delta t = 1/N$ and $N = 1024$ samples. The signal is shown in Fig. \ref{fig:gaussSignal}. Doing a FFT on this signal gives a restriction on the maximum frequency one can obtain. This is given by the Nyqvist frequency
+
+\begin{equation*}
+  \nu_c = \frac{1}{2\Delta t},
+\end{equation*}
+
+which in our case is $\nu_c = 512$Hz. The FFT is plotted in Fig. \ref{fig:FFTgauss} and normalized together with the analytical fourier transform of the signal.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/gaussianSignal.pdf}
+  \caption{Gaussian signal of 1024 samples.}
+  \label{fig:gaussSignal}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/FFTgauss.pdf}
+  \caption{FFT of the signal in Fig. \ref{fig:gaussSignal}.}
+  \label{fig:FFTgauss}
+\end{figure}
