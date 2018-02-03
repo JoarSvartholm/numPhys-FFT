@@ -4,12 +4,12 @@ Now if we instead look at a sinusoidal signal with a modulated amplitude, Fig. \
 
 \begin{equation}
 \label{eq:amwave}
-  u(t) = \bar{u}\sin{2\pi f_c t}
+  u(t) = \bar{u}\sin{(2\pi f_c t)}
 \end{equation}
 
 where $f_c = 1/(128\Delta t)$ is the center frequency of the signal and $\Delta t = 1/1024$. The modulation is done such that an amplitude $\bar{u} = 3$ correspond to 1 and $\bar{u} = 1$ correspond to 0.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{figs/amsignal}
   \caption{Amplitude modulated signal.}
@@ -18,7 +18,7 @@ where $f_c = 1/(128\Delta t)$ is the center frequency of the signal and $\Delta 
 
 Computing the FFT of this signal gives Fig. \ref{fig:FFTam} where the absolute value $S(f) = |U(f)|^2$ is plotted for only the positive freguencies. Looking at the peaks in this figure one can find the center frequency as 8 Hz which is in accordance with Eq. \eqref{eq:amwave}. The band width of this signal is found by the side peaks at 4 and 12 Hz to be $\Delta f = 8 Hz$. This could have been deduced from the supercomposition of two waves with frequencies 4 and 12 Hz. The bandwidth is thus simply the beat frequency of this signal.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{figs/FFTam}
   \caption{Fourier transform of the signal from Fig. \ref{fig:amsignal}. There are three peaks at 4, 8 and 12 Hz.}
@@ -27,7 +27,7 @@ Computing the FFT of this signal gives Fig. \ref{fig:FFTam} where the absolute v
 
 Changing the amplitude from 3 to 10 in the modulation gives the frequency spectrum in Fig. \ref{fig:FFTam10}. As one can see the peaks are at the same place but with a larger amplitude. This means that a larger modulation makes it easier to find in the spectrum. This makes sense.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{figs/FFTam10}
   \caption{Fourier transform with a larger amplitude of the modulation.}
@@ -36,9 +36,10 @@ Changing the amplitude from 3 to 10 in the modulation gives the frequency spectr
 
 If the frequency is doubled but with the same bandwidth one can send twice as many bits. Such a signal is shown in Fig. \ref{fig:amsignal2}. This means that as long as the hardware can handle high frequencies it is always good to use higher frequencies when sending signals.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{figs/amsignal2}
   \caption{Amplitude modulated signal with doubled frequency.}
   \label{fig:amsignal2}
 \end{figure}
+\clearpage

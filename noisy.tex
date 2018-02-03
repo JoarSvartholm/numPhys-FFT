@@ -13,10 +13,10 @@ The frequency spectrum of the signal is shown in Fig. \ref{fig:FFTnoisy}. One ca
 
 \begin{equation}
   \label{eq:gaussfilt}
-  H(f) = \text{exp}\left[-\frac{1}{2}\left(\frac{|f|-f}{\Delta f}\right)^2\right]
+  H(f) = \text{exp}\left[-\frac{1}{2}\left(\frac{|f|-f_c}{\Delta f}\right)^2\right]
 \end{equation}
 
-was added in order to see the signal. Using the estimated parameters a nice and clear signal was obtained. This is shown in Fig. \ref{fig:filteredSignal}. From this each bit with a maximum amplitude larger than unity was read off as 1 and the other bits as 0. The hidden message in the signal was found to be \verb|FNM18 'Ef!Z4h#7_| using the \verb|am11.dat| file.
+was added in order to see the signal. Using the estimated parameters a nice and clear signal was obtained. This is shown in Fig. \ref{fig:filteredSignal}. From this each bit with a maximum amplitude larger than unity was read off as 1 and the other bits as 0. The hidden message in the signal was found to be \verb|FNM18 'Ef!Z4h#7_| using the \verb|am11.dat| file. Running \verb|/home/josv0150/Documents/numPhys/numPhys-FFT/code/decoder am11.dat| should verify this result.
 
 \begin{figure}[H]
   \centering
