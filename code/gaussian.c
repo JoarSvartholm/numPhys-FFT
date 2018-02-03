@@ -18,7 +18,7 @@ int main(void){
   //printf("%f\n",dt );
   //genarate data
   for(int i=0;i< noSamp;i++){
-    T[i] = (i-noSamp/2+1)*dt;
+    T[i] = (i-noSamp/2)*dt;
     X[i] = 1/(sqrt(M_PI)*sigma)*exp(-T[i]*T[i]/(sigma*sigma));
   }
 

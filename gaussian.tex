@@ -13,7 +13,14 @@ where $\sigma = 16 \Delta t$, step length $\Delta t = 1/N$ and $N = 1024$ sample
   \nu_c = \frac{1}{2\Delta t},
 \end{equation*}
 
-which in our case is $\nu_c = 512$Hz. The FFT is plotted in Fig. \ref{fig:FFTgauss} and normalized together with the analytical fourier transform of the signal.
+which in our case is $\nu_c = 512$Hz. The frequency resolution is
+
+\begin{equation*}
+  f_{res} = \frac{f_{samp}}{N}
+\end{equation*}
+
+which in our case is equal to $1\,$Hz since the sampling rate is $1024\,$Hz.
+ The FFT is plotted in Fig. \ref{fig:FFTgauss} and normalized together with the analytical fourier transform of the signal. The numerical solution correspond well to the analytical result with a maximum error of $4.86 \cdot 10^{-10}$ in the absolute norm.
 
 \begin{figure}[H]
   \centering

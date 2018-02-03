@@ -1,0 +1,33 @@
+\section{Extracting information from a noisy signal}
+
+A more real signal is shown in Fig. \ref{fig:noisySignal}. Because of all the noise, no bit structure is visual in the signal. The signal contains 8192 samples over 1 second but only a partition of it is plotted in the figure.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/noisySignal}
+  \caption{Noisy unfiltered signal with no clear bit structure.}
+  \label{fig:noisySignal}
+\end{figure}
+
+The frequency spectrum of the signal is shown in Fig. \ref{fig:FFTnoisy}. One can see three distinct peaks and two minor peaks on each side of these. From the three peaks the bandwidth was estimated to $\Delta f = 256$Hz and the center frequency to $f_c = 1024$Hz. To this spectrum a gaussian filter
+
+\begin{equation}
+  \label{eq:gaussfilt}
+  H(f) = \text{exp}\left[-\frac{1}{2}\left(\frac{|f|-f}{\Delta f}\right)^2\right]
+\end{equation}
+
+was added in order to see the signal. Using the estimated parameters a nice and clear signal was obtained. This is shown in Fig. \ref{fig:filteredSignal}. From this each bit with a maximum amplitude larger than unity was read off as 1 and the other bits as 0. The hidden message in the signal was found to be \verb|FNM18 'Ef!Z4h#7_| using the \verb|am11.dat| file.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/FFTnoisy}
+  \caption{Frequency spectrum of the signal in Fig. \ref{fig:noisySignal}.}
+  \label{fig:FFTnoisy}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/filteredSignal}
+  \caption{Filtered signal. A clear bit structure is now visible.}
+  \label{fig:filteredSignal}
+\end{figure}
